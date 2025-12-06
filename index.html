@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issac Paul Kummari - Technical Trainer & Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        .project-features {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .project-features ul {
+            list-style: none;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .project-features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .experience-header {
+            margin-bottom: 15px;
+        }
+
+        .experience-header h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .experience-meta {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .experience-date {
+            color: #999;
+            font-size: 0.95em;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+        }
+
+        /* Education Section */
+        .education-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .education-card h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #666;
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .education-gpa {
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-link {
+            background: white;
+            padding: 20px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #2c3e50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: #667eea;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero h2 {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Issac Paul Kummari</h1>
+            <h2>Technical Trainer & Software Developer</h2>
+            <p>Passionate about teaching programming fundamentals and building strong coding foundations. Specialized in C/C++, Data Structures & Algorithms with hands-on training experience.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    I am a Technical Trainer with expertise in C/C++, data structures, and algorithms. With a strong foundation in computer science fundamentals and a passion for education, I deliver clear, practice-oriented lessons that help students build solid programming skills. My approach combines hands-on examples, real-world problem-solving techniques, and modern learning tools to create engaging and effective learning experiences.
+                </p>
+                <p style="margin-top: 20px;">
+                    I believe in continuous learning and staying updated with the latest technologies. My experience includes designing curriculum, conducting workshops, and mentoring students for technical interviews and career readiness. I leverage AI tools and online platforms to enhance productivity and learning outcomes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>C Programming</li>
+                        <li>C++</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Concepts</h3>
+                    <ul>
+                        <li>Data Structures</li>
+                        <li>Algorithms</li>
+                        <li>Problem Solving</li>
+                        <li>Memory Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies</h3>
+                    <ul>
+                        <li>MERN Stack (MongoDB, Express, React, Node.js)</li>
+                        <li>HTML, CSS</li>
+                        <li>GenAI Tools</li>
+                        <li>Git & Version Control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Technical Trainer</h3>
+                    <p class="experience-meta">Campus Corporate Connect | Hyderabad</p>
+                    <p class="experience-date">July 2024 - November 2025</p>
+                </div>
+                <ul>
+                    <li>Conducted hands-on training sessions on C programming, Data Structures, and Algorithms for undergraduate students</li>
+                    <li>Designed and delivered interactive lectures covering arrays, pointers, and coding problem-solving techniques</li>
+                    <li>Developed curriculum and educational material using GeeksforGeeks and CodeChef resources</li>
+                    <li>Facilitated workshops on coding platforms, helping students prepare for internships and technical interviews</li>
+                    <li>Provided one-on-one mentoring and guidance for students interested in programming careers</li>
+                    <li>Evaluated student progress through quizzes, live problem-solving sessions, and project reviews</li>
+                    <li>Organized AI tool demonstrations to improve learning productivity for students</li>
+                    <li>Guided students on LinkedIn professional branding for job readiness</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects & Achievements</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Data Structures Implementation</h3>
+                    <p>Comprehensive implementation of fundamental data structures in C/C++ for teaching and demonstration purposes.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Algorithms</span>
+                    </div>
+                    <div class="project-features">
+                        <ul>
+                            <li>Implemented arrays, linked lists, stacks, and queues</li>
+                            <li>Optimized algorithms for better time complexity</li>
+                            <li>Created educational documentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Interactive Coding Workshop</h3>
+                    <p>Designed and delivered comprehensive workshop series for competitive programming preparation.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">DSA</span>
+                        <span class="tech-tag">Problem Solving</span>
+                    </div>
+                    <div class="project-features">
+                        <ul>
+                            <li>Trained 100+ students in problem-solving techniques</li>
+                            <li>Created practice problem sets and solutions</li>
+                            <li>Improved student interview success rates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>AI-Powered Learning Tools</h3>
+                    <p>Integrated GenAI tools to enhance student learning productivity and career preparation.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">GenAI</span>
+                        <span class="tech-tag">Education Tech</span>
+                        <span class="tech-tag">Career Development</span>
+                    </div>
+                    <div class="project-features">
+                        <ul>
+                            <li>Demonstrated AI-powered resume builders</li>
+                            <li>Enhanced learning material with AI assistance</li>
+                            <li>Improved student portfolio development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3>Bachelor of Technology (B.Tech)</h3>
+                <p>Jawaharlal Nehru Technological University, Kakinada (JNTUK)</p>
+                <p>Kakinada, Andhra Pradesh</p>
+                <p class="education-gpa">CGPA: 7.3/10 | Year: 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-links">
+                <a href="mailto:isaacpaul5251@gmail.com" class="contact-link">
+                    <span>📧</span> Email
+                </a>
+                <a href="https://linkedin.com/in/k-issac-paul-77272231a" target="_blank" class="contact-link">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="tel:+917095458788" class="contact-link">
+                    <span>📱</span> Phone
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Issac Paul Kummari. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">Vijayawada, Andhra Pradesh, India</p>
+        </div>
+    </footer>
+</body>
+</html>
