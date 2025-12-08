@@ -120,14 +120,25 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
-        .nav-container {
+        /* .nav-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
+        } */
+		 .nav-container {
+    position: relative; /* NEW: anchor for the dropdown */
+    z-index: 1200;      /* keep nav above page content */
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
         .logo {
             font-size: 1.8rem;
@@ -793,14 +804,40 @@
             }
 
             .mobile-toggle {
-                display: flex;
-            }
-			.nav-links.active{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 8px;
+  position: relative;    /* anchor for small improvements */
+  z-index: 1400;         /* ensures toggle sits above the dropdown */
+}
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: absolute;                 /* changed from fixed -> absolute */
+  top: calc(100% + 8px);              /* place just below the navbar */
+  right: 1rem;                        /* anchor to right inside nav-container */
+  width: min(350px, 86vw);            /* responsive width, won't exceed viewport */
+  background: linear-gradient(180deg, rgba(10,15,30,0.98), rgba(20,26,40,0.98));
+  border-radius: 12px;
+  padding: 8px 6px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(148,163,184,0.04);
+  z-index: 1300;
+  transform-origin: top right;
+  animation: scaleIn 180ms ease;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+			/* .nav-links.active{
     display:flex !important;
     flex-direction:column;
     gap:0;
     position:fixed;
-    top:64px;              /* below the navbar */
+    top:64px;              
     right:12px;
     width: min(280px,86vw);
     background: linear-gradient(180deg, rgba(10,15,30,0.98), rgba(20,26,40,0.98));
@@ -809,7 +846,7 @@
     box-shadow:0 12px 40px rgba(0,0,0,0.6);
     border:1px solid rgba(148,163,184,0.04);
     z-index:1300;
-  }
+  } */
   .nav-links.active li { opacity: 1; animation: none; } /* make sure items are visible */
   .nav-links.active a { color: var(--text-primary); padding:0.85rem 1rem; font-weight:600; }
             .profile-icon {
@@ -831,4 +868,85 @@
                 width: min(260px, 45vw);
             }
         }
-    
+    /* ---------- Larger / more touch-friendly navbar for smaller screens (added) ---------- */
+
+/* base larger navbar when viewport <= 1024px */
+@media (max-width: 1024px) {
+  nav {
+    padding: 0.9rem 0;               /* increase navbar vertical space */
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-container {
+    padding: 1.15rem 1.5rem;         /* reduced horizontal padding but taller header */
+  }
+
+  .logo {
+    font-size: 2.0rem;               /* slightly larger logo for clarity */
+  }
+}
+
+/* mobile / tablet: make the toggle bigger and mobile menu more usable */
+@media (max-width: 768px) {
+  nav {
+    padding: 1.1rem 0;               /* taller navbar for touch */
+  }
+
+  .nav-container {
+    padding: 1.15rem 1rem;           /* keep some horizontal margin for the menu anchor */
+  }
+
+  /* make hamburger (toggle) bigger & easier to tap */
+  .mobile-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.02);
+    transition: transform 0.18s ease, background 0.18s ease;
+  }
+  .mobile-toggle span {
+    width: 22px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+  }
+  .mobile-toggle:active { transform: scale(0.98); }
+
+  /* mobile dropdown: a little wider, capped, and visually balanced */
+  .nav-links.active {
+    right: 1rem;                     /* anchor to the inside edge of the nav-container */
+    top: calc(100% + 10px);          /* safe gap below navbar */
+    width: min(420px, 92vw);         /* large but capped so it fits */
+    padding: 10px 8px;
+    border-radius: 14px;
+  }
+
+  /* make the menu items taller for easier tapping */
+  .nav-links.active a {
+    display: block;
+    padding: 12px 14px;
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  /* increase spacing between logo and toggle on small screens */
+  .nav-container .logo { margin-right: 8px; }
+
+  /* make sure the active nav is above other content */
+  .nav-links.active { z-index: 1400; }
+
+  /* optional: if you want the active menu to occupy the full width on tiny phones */
+  @media (max-width: 380px) {
+    .nav-links.active {
+      right: 6px;
+      left: 6px;
+      width: calc(100% - 12px);
+    }
+  }
+}
+
+/* Keep desktop nav unchanged; only change touch areas for small screens */
