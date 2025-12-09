@@ -399,12 +399,10 @@
 }
 
 .profile-icon:hover .profile-img {
-  transform: translateY(var(--face-offset)) scale(1.03) rotate(3deg);
-}
+transform: translateY(var(--face-offset)) scale(1.08);}
 
 .profile-icon:hover {
-            transform: scale(1.03) rotate(3deg);
-        }
+transform: scale(1.08);        }
 
         /* Section Styles */
         section {
@@ -981,3 +979,4 @@
 }
 
 /* Keep desktop nav unchanged; only change touch areas for small screens */
+
