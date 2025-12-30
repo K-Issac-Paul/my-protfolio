@@ -980,5 +980,19 @@
   }
 }
 
+/* responsive projects grid for all screen sizes */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    cursor: pointer;
+  }
+}
+
 /* Keep desktop nav unchanged; only change touch areas for small screens */
+
 
