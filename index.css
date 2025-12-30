@@ -1,3 +1,6 @@
+760
+757
+763
 /* ---------- Global and variables ---------- */
 * {
     margin: 0;
@@ -762,6 +765,50 @@ section:nth-child(even) {
     font-weight: bold;
 }
 
+.view-project-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, rgb(129, 140, 248) 0%, rgb(99, 102, 241) 100%);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(129, 140, 248, 0.3);
+}
+
+.view-project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(129, 140, 248, 0.4);
+    background: linear-gradient(135deg, rgb(99, 102, 241) 0%, rgb(79, 70, 229) 100%);
+}
+
+.view-project-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(129, 140, 248, 0.3);
+}
+
+/* Responsive styling for .view-project-btn */
+@media (max-width: 768px) {
+    .view-project-btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .view-project-btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+}
+
 /* Education Section */
 .education-card {
     background: var(--bg-card);
@@ -1128,3 +1175,4 @@ footer {
     box-shadow: 0 15px 40px rgba(129, 140, 248, 0.4);
 }
 /* Keep desktop nav unchanged; only change touch areas for small screens */
+
