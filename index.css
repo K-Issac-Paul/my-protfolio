@@ -604,9 +604,10 @@
 
         /* Projects Section */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            display: flex;
+flex-wrap: wrap;
+            gap: 2.5rem;
+			  justify-content: center;
         }
 
         .project-card {
@@ -616,6 +617,7 @@
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
             border: 1px solid var(--border);
+			  flex: 1 1 calc((100% / 6) - 2.5rem);
         }
 
         .project-card:hover {
@@ -985,7 +987,7 @@
 @media (max-width: 768px) {
   606
 	
-    grid-template-columns:repeat(2, 1fr);
+    flex: 1 1 calc((100% / 3) - 2.5rem);
 	      gap: 3rem;
   }
 }
@@ -996,11 +998,12 @@
   }
 	
   .projects-grid {
-    grid-template-columns: 1fr;
+    flex: 0 0 100%;
   }
 }
 
 /* Keep desktop nav unchanged; only change touch areas for small screens */
+
 
 
 
