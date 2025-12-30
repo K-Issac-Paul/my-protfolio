@@ -606,7 +606,7 @@
         .projects-grid {
             display: flex;
 flex-wrap: wrap;
-            gap: 2.5rem;
+            gap: 5rem;
 			  justify-content: center;
         }
 
@@ -1003,6 +1003,7 @@ flex-wrap: wrap;
 }
 
 /* Keep desktop nav unchanged; only change touch areas for small screens */
+
 
 
 
