@@ -984,6 +984,7 @@
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+	      gap: 3rem;
   }
 }
 
@@ -994,5 +995,6 @@
 }
 
 /* Keep desktop nav unchanged; only change touch areas for small screens */
+
 
 
