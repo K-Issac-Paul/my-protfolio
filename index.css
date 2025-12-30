@@ -618,6 +618,11 @@ section:nth-child(even) {
     min-height: 300px;
 }
 
+.about-text {
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
 [data-theme="light"] .about-image {
     background: linear-gradient(135deg, rgba(129, 140, 248, 0.08) 0%, rgba(192, 132, 252, 0.08) 100%);
     border: 2px solid rgba(129, 140, 248, 0.15);
@@ -877,3 +882,4 @@ section:nth-child(even) {
 .view-project-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 10px
+
