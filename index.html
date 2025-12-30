@@ -27,6 +27,9 @@
                 <span></span>
                 <span></span>
             </div> -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle Theme">
+                🌙
+            </button>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
@@ -51,7 +54,7 @@
                 <div class="profile-card" aria-hidden="false">
                     <div class="profile-icon" role="img" aria-label="Profile picture">
                         <!-- removed inline width/height; CSS handles responsive sizing -->
-                        <img src="my professional pic.jpg" alt="Issac Paul Kummari — profile photo" class="profile-img">
+                        <img src="my fav.jpeg" alt="Issac Paul Kummari — profile photo" class="profile-img">
                     </div>
                 </div>
             </div>
@@ -363,11 +366,46 @@
             });
         });
         // END OF NEW CODE 👆
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        // Initialize theme from localStorage or system preference
+        const initializeTheme = () => {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'dark');
+            
+            setTheme(theme);
+        };
+
+        const setTheme = (theme) => {
+            if (theme === 'light') {
+                htmlElement.setAttribute('data-theme', 'light');
+                themeToggle.textContent = '☀️';
+                themeToggle.title = 'Switch to Dark Theme';
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+                themeToggle.title = 'Switch to Light Theme';
+                localStorage.setItem('theme', 'dark');
+            }
+        };
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+
+        // Initialize theme on page load
+        initializeTheme();
     </script>
 </body>
 
 </html>
-
 
 
 
