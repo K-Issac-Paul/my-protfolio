@@ -1139,11 +1139,12 @@ footer {
 
 
 /* About Section Image Styling */
-.about-img {
+.profile-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
   display: block;
 }
+
 
