@@ -331,7 +331,7 @@ nav.scrolled {
     border-radius: 50%;
     transition: all 0.3s ease;
     display: flex;
-    align-items: left;
+    align-items: center;
     justify-content: left;
     width: 45px;
     height: 45px;
@@ -519,7 +519,8 @@ nav.scrolled {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    335
+    ;
     position: relative;
 }
 
@@ -895,6 +896,13 @@ section:nth-child(even) {
         padding: 0.75rem 1rem;
         text-align: center;
         font-size: 0.85rem;
+    }
+
+    
+    .theme-toggle {
+        position: absolute;
+        left: 0.5rem;
+        top: 0.5rem;
     }
 }
 
@@ -1338,3 +1346,4 @@ footer {
 }
 
 /* Keep desktop nav unchanged; only change touch areas for small screens */
+
