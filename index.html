@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Issac Paul Kummari | Technical Trainer</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/jpeg" href="my professional pic.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo"></a>
+            <div class="nav-left">
+                <a href="#home" class="logo"></a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle Theme">
+                    🌙
+                </button>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -20,22 +31,12 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
-                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <!-- <div class="mobile-toggle" aria-label="Toggle navigation" role="button" tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div> -->
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle Theme">
-                🌙
-            </button>
+
             <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
-
         </div>
     </nav>
 
@@ -51,12 +52,13 @@
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
                     <a href="#projects" class="btn btn-secondary">View Projects</a>
                 </div>
+
             </div>
             <div class="hero-image">
                 <div class="profile-card" aria-hidden="false">
                     <div class="profile-icon" role="img" aria-label="Profile picture">
                         <!-- removed inline width/height; CSS handles responsive sizing -->
-                        <img src="my professional pic.jpg" alt="Issac Paul Kummari — profile photo" class="profile-img">
+                        <img src="my fav.jpeg" alt="Issac Paul Kummari — profile photo" class="profile-img">
                     </div>
                 </div>
             </div>
@@ -71,7 +73,7 @@
             <div class="about-content">
                 <div class="about-image animate-on-scroll delay-1">
                     <div class="about-icon">
-                        <img src="teaching .jpg" alt="" srcset="" class="tech-image">
+                        <img src="teaching .jpg" alt="Issac Paul Kummari teaching a class" class="tech-image">
                     </div>
                 </div>
                 <div class="about-text">
@@ -94,7 +96,7 @@
         </div>
     </section>
     <!-- Skills Section -->
-   <section id="skills">
+    <section id="skills">
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <h2 class="section-title">Technical Skills</h2>
@@ -156,7 +158,7 @@
                 <ul class="experience-details">
                     <li>Conducted hands-on training sessions on C programming, Data Structures, and Algorithms for
                         undergraduate students</li>
-                    
+
                     <li>Provided one-on-one mentoring and guidance for students interested in programming careers</li>
                     <li>Organized AI tool demonstrations to improve learning productivity for students</li>
                     <li>Trained 1000+ students in problem-solving techniques</li>
@@ -173,7 +175,7 @@
                 <p class="section-subtitle">Transforming ideas into impactful solutions</p>
             </div>
             <div class="projects-grid">
-               
+
                 <div class="project-card animate-on-scroll delay-4"
                     onclick="window.open('https://to-do-list-peach-delta-28.vercel.app/', '_blank')">
                     <div class="project-header">
@@ -191,11 +193,12 @@
                             <li>Implemented real-time task tracking with categorization</li>
                             <li>Created an intuitive UI for efficient task organization</li>
                         </ul>
-                         <a href="https://to-do-list-peach-delta-28.vercel.app/" target="_blank" class="view-project-btn">View Project</a>
+                        <a href="https://to-do-list-peach-delta-28.vercel.app/" target="_blank"
+                            class="view-project-btn">View Project</a>
                     </div>
                 </div>
                 <div class="project-card animate-on-scroll delay-5"
-                    onclick="window.open('https://day-wise-tracker.onrender.com/, '_blank')">
+                    onclick="window.open('https://day-wise-tracker.onrender.com', '_blank')">
                     <div class="project-header">
                         <h3>ProTrack - Professional Expense & Time Tracker</h3>
                         <div class="project-tags">
@@ -210,7 +213,8 @@
                             <li>Implemented productivity metrics and visual analytics</li>
                             <li>Created features for daily, monthly, and yearly expense tracking</li>
                         </ul>
-                         <a href="https://day-wise-tracker.onrender.com/" target="_blank" class="view-project-btn">View Project</a>
+                        <a href="https://day-wise-tracker.onrender.com/" target="_blank"
+                            class="view-project-btn">View Project</a>
                     </div>
                 </div>
             </div>
@@ -235,29 +239,6 @@
         </div>
     </section>
 
-     <!-- Certifications Section -->
- <section id="certifications">
-  <div class="container">
-   <div class="section-header animate-on-scroll">
-    <h2 class="section-title">Certifications</h2>
-    <p class="section-subtitle">Professional credentials and achievements</p>
-   </div>
-   <div class="certifications-grid">
-    <div class="certification-card animate-on-scroll delay-1">
-     <div class="certification-header">
-      <h3>Generative AI Mastermind</h3>
-      <p class="certification-issuer">Outskill</p>
-     </div>
-     <div class="certification-body">
-      <p class="certification-date">Completed 2025</p>
-      <p class="certification-description">Advanced training in Generative AI, covering latest AI tools and applications in modern development.</p>
-      <div class="cert-badge">✓ Verified</div>
-     </div>
-    </div>
-   </div>
-  </div>
- </section>
-
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -277,8 +258,10 @@
                     <a href="https://www.linkedin.com/in/issac-k-77272231a" target="_blank" rel="noopener">Connect with
                         me</a>
                 </div>
-             
-            <div class="contact-card animate-on-scroll delay-4">
+
+
+
+                <div class="contact-card animate-on-scroll delay-4">
                     <div class="contact-icon">📍</div>
                     <h3>Location</h3>
                     <p>Vijayawada, Andhra Pradesh, India</p>
@@ -289,13 +272,16 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Issac Paul Kummari. All rights reserved.</p>
+        <p>© <span id="year"></span> Issac Paul Kummari. All rights reserved.</p>
     </footer>
 
     <!-- Scroll to Top Button -->
     <div class="scroll-top" id="scrollTop">↑</div>
 
     <script>
+        // Set dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         const scrollTop = document.getElementById('scrollTop');
@@ -401,7 +387,7 @@
             const savedTheme = localStorage.getItem('theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             const theme = savedTheme || (prefersDark ? 'dark' : 'dark');
-            
+
             setTheme(theme);
         };
 
@@ -431,16 +417,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
