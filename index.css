@@ -919,6 +919,7 @@ section:nth-child(even) {
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
+     width: 100%;
 }
 
 .project-card:hover {
