@@ -929,10 +929,14 @@ section:nth-child(even) {
 
 .project-header {
     background: linear-gradient(135deg, rgba(129, 140, 248, 0.2) 0%, rgba(192, 132, 252, 0.2) 100%);
-    padding: 2rem;
     color: var(--white);
     border-bottom: 1px solid rgba(129, 140, 248, 0.3);
     transition: all 0.3s ease;
+      display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
 }
 
 [data-theme="light"] .project-header {
